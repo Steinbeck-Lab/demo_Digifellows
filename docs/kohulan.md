@@ -1,4 +1,4 @@
-## Dr. Kohulan Rajan
+# Dr. Kohulan Rajan
 ## Visiting scientist
 
 <img src="../assets/images/kohulan-rajan.jpg" width=20%/>

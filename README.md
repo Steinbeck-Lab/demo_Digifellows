@@ -252,8 +252,8 @@ A single link to the next page uses `style="text-align: right"` instead.
   `docs/assets/images/img_hexagon.png`, `docs/assets/videos/tipsandtricks_1.mp4`.
 - **Copy and markup:** typos on several pages (for example "gradtitude", "Ansatztberechnung",
   "Assistent"); `playinline` instead of `playsinline` and a `<font>` tag in `snippets.md`; an
-  invalid `background-color: b8b8b8` in `new-entry.md`; `eln.md` has two `#` titles and
-  `kohulan.md` has none; two decorative `[Jump to ](#)` links.
+  invalid `background-color: b8b8b8` in `new-entry.md`; `eln.md` has two `#` titles;
+  two decorative `[Jump to ](#)` links.
 - **License attribution:** `LICENSE` still names the work "ELN Documentation".
 
 ## License
