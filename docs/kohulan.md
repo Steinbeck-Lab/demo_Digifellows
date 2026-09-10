@@ -1,7 +1,7 @@
 ## Dr. Kohulan Rajan
 ## Visiting scientist
 
-<img src="../assets/images/kohulan-rajan.png" width=20%/>
+<img src="../assets/images/kohulan-rajan.jpg" width=20%/>
 
 Dr. Kohulan Rajan is a Visiting Scientist at the Natural Products Cheminformatics Research Group at Friedrich-Schiller-University Jena, and Project Lead for AI & Automation at the Beilstein-Institut in Frankfurt. He completed his school education in Sri Lanka before moving to Bangalore, India, where he received his Bachelor’s degree in Biotechnology from Bangalore University. He then pursued a Master’s degree in Bioinformatics from Savitribai Phule Pune University.
 
