@@ -1,5 +1,5 @@
-function seekVideo(seconds) {
-  var video = document.getElementById('sandmeyer');
+function seekVideo(id, seconds) {
+  var video = document.getElementById(id);
   if (video) {
     video.currentTime = seconds;
     video.play();
