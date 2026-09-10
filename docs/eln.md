@@ -5,7 +5,7 @@ ELN is a digital tool that stands for *electronic lab notebook*. As digitalisati
 The significance in the application of ELNs is tightly related to the [FAIR Principles](https://www.go-fair.org/fair-principles/) for scientific data management: **F**indability, **A**ccessibility, **I**nteroperability and **R**euse of digital assets. In short, we aspire to strengthen the network of data management and sharing among all fellow scientists.
 
 # What is Kladde?
-Kladde is an ELN powered by the open-sourced [^1] [cheminfo](https://cheminfo.github.io/) that is specifically customized for students and researchers at the Friedrich-Schiller-University-Jena. Some major features of Kladde include are a big variety of spectra simulation tools (e.g. IR, NMR, MS), functions integrated with [NMRium](https://app.nmrium.com/), chemoinformatics and so on. 
+Kladde is an ELN powered by the open-sourced [^1] [cheminfo](https://cheminfo.github.io/) that is specifically customized for students and researchers at the Friedrich-Schiller-University-Jena. Some major features of Kladde included are a big variety of spectra simulation tools (e.g. IR, NMR, MS), functions integrated with [NMRium](https://app.nmrium.com/), chemoinformatics and so on. 
 
 
 
