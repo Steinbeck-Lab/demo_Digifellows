@@ -25,7 +25,7 @@
   },
   "link.item.label.Source on GitHub": {
     "message": "Quellcode auf GitHub",
-    "description": "The label of footer link with label=Source on GitHub linking to https://github.com/Steinbeck-Lab/demo_Digifellows"
+    "description": "The label of footer link with label=Source on GitHub linking to https://github.com/Steinbeck-Lab/kladde_Digifellows"
   },
   "copyright": {
     "message": "Inhalte der Dokumentation CC BY 4.0 · Code der Website MIT",

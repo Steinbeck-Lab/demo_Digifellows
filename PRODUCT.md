@@ -50,7 +50,7 @@ system.
   Analysis, IR, NMR, MS, Report and the Soyee Chan bio are placeholders ("brewing in progress... ☕").
 - Media carries the instructions: screenshots and toolbar icons, screen recordings (MP4) with poster
   images, and timestamp links that jump a recording to a moment.
-- Hosting: static site on GitHub Pages (repository Steinbeck-Lab/demo_Digifellows) with the custom
+- Hosting: static site on GitHub Pages (repository Steinbeck-Lab/kladde_Digifellows) with the custom
   domain kladde.uni-jena.de.
 - URLs: existing URLs keep working, including /new-entry/, /adding-chemical-equation/, /snippets/
   and the redirects from /how-to-start/, /chemicaleditor/ and /scheme/.

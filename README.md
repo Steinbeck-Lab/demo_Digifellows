@@ -8,8 +8,8 @@ guides, annotated screenshots and short screen recordings.
 
 - Site: <https://kladde.uni-jena.de> (custom domain, currently not assigned; see
   [Known gaps](#known-gaps))
-- GitHub Pages project URL: <https://steinbeck-lab.github.io/demo_Digifellows/>
-- Repository: <https://github.com/Steinbeck-Lab/demo_Digifellows>
+- GitHub Pages project URL: <https://steinbeck-lab.github.io/kladde_Digifellows/>
+- Repository: <https://github.com/Steinbeck-Lab/kladde_Digifellows>
 
 The site is a static [Docusaurus 3](https://docusaurus.io/) (React) site in English and German.
 Its visual design, the *Laborkladde* theme, is documented in [DESIGN.md](DESIGN.md).
@@ -62,7 +62,7 @@ GIT_USER=<your-github-username> npm run deploy    # or: USE_SSH=true npm run dep
 ```
 
 `docusaurus deploy` builds both languages and pushes `build/` to `gh-pages` of
-`Steinbeck-Lab/demo_Digifellows` (set in `docusaurus.config.js`).
+`Steinbeck-Lab/kladde_Digifellows` (set in `docusaurus.config.js`).
 
 - `static/CNAME` holds the custom domain (`kladde.uni-jena.de`, one line, no trailing newline) and
   is copied into every build, so a deploy keeps the domain file on `gh-pages`.
@@ -211,11 +211,11 @@ Customized parts of Docusaurus:
 - **Custom domain:** since the repository moved to Steinbeck-Lab, `kladde.uni-jena.de` is not
   assigned in the repository's GitHub Pages settings and shows "Site not found". Its DNS record
   still points at `soyeechan230126.github.io`. The site is reachable at the
-  [project URL](https://steinbeck-lab.github.io/demo_Digifellows/) for now, but that URL only works
+  [project URL](https://steinbeck-lab.github.io/kladde_Digifellows/) for now, but that URL only works
   for the old MkDocs build: this Docusaurus build uses `baseUrl: '/'` and loads its styles and
   scripts from the domain root, so restore the custom domain before deploying it. Clones made before the move
   can update their remote with
-  `git remote set-url origin https://github.com/Steinbeck-Lab/demo_Digifellows.git`.
+  `git remote set-url origin https://github.com/Steinbeck-Lab/kladde_Digifellows.git`.
 - **German text:** no page is translated yet, and the German interface strings need review.
 - **Unwritten pages:** Sample Analysis, IR, NMR, MS, Report and the Soyee Chan bio.
 - **Media:** the largest videos are 33 MB (`snippets-preset.mp4`), 18 MB, 14 MB, 13 MB and 11 MB;

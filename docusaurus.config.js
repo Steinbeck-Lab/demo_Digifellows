@@ -11,7 +11,7 @@ const config = {
   baseUrl: '/',
   trailingSlash: true,
   organizationName: 'Steinbeck-Lab',
-  projectName: 'demo_Digifellows',
+  projectName: 'kladde_Digifellows',
   deploymentBranch: 'gh-pages',
 
   onBrokenLinks: 'throw',
@@ -116,7 +116,7 @@ const config = {
             title: 'Built on',
             items: [
               {label: 'cheminfo', href: 'https://cheminfo.github.io/'},
-              {label: 'Source on GitHub', href: 'https://github.com/Steinbeck-Lab/demo_Digifellows'},
+              {label: 'Source on GitHub', href: 'https://github.com/Steinbeck-Lab/kladde_Digifellows'},
             ],
           },
         ],
