@@ -1,0 +1,170 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-10T12:00:00Z",
+  "title": "Design System: Kladde",
+  "extensions": {
+    "colorMeta": {
+      "ink": { "role": "primary", "displayName": "FSU Ballpoint Ink", "canonical": "oklch(26.4% 0.092 256.5)", "tonalRamp": ["#000a21", "#002350", "#1e4272", "#3d6295", "#5e84b9", "#7fa7de", "#a7ccff", "#e5f0ff"] },
+      "ink-soft": { "role": "primary", "displayName": "Faded Ink", "canonical": "oklch(48.1% 0.092 256.3)", "tonalRamp": ["#000a21", "#002350", "#1e4272", "#3d6295", "#5d84b9", "#7fa7de", "#a7ccfe", "#e5f0ff"] },
+      "green": { "role": "secondary", "displayName": "Faculty Green, text grade", "canonical": "oklch(54.1% 0.145 131.6)", "tonalRamp": ["#050e00", "#172c00", "#2d4c01", "#437001", "#61932a", "#83b750", "#a6dd75", "#d3ffaf"] },
+      "green-deep": { "role": "secondary", "displayName": "Deep Green", "canonical": "oklch(48.1% 0.136 133.0)", "tonalRamp": ["#040f00", "#162c00", "#2a4d01", "#407007", "#619336", "#83b75a", "#a6dc7e", "#d2ffb2"] },
+      "green-wash": { "role": "secondary", "displayName": "Green Wash", "canonical": "oklch(93.1% 0.051 131.8)", "tonalRamp": ["#050f00", "#1c2a0e", "#38482b", "#576849", "#778969", "#99ac8b", "#bdd1af", "#e2f6d3"] },
+      "gold": { "role": "tertiary", "displayName": "FSU Gold", "canonical": "oklch(56.6% 0.075 88.9)", "tonalRamp": ["#100a00", "#2f2301", "#523f04", "#725f2b", "#94804c", "#b8a36e", "#ddc791", "#ffedc1"] },
+      "gold-ink": { "role": "tertiary", "displayName": "Gold Ink", "canonical": "oklch(48.0% 0.075 88.2)", "tonalRamp": ["#100a00", "#302301", "#523f04", "#735f2b", "#95804c", "#b8a36e", "#ddc791", "#ffedc2"] },
+      "paper": { "role": "neutral", "displayName": "Notebook Paper", "canonical": "oklch(99.4% 0.002 247.8)", "tonalRamp": ["#0b0b0c", "#242526", "#414243", "#606162", "#818283", "#a4a5a6", "#c8c9ca", "#edeeef"] },
+      "white": { "role": "neutral", "displayName": "Print White", "canonical": "oklch(100% 0 0)", "tonalRamp": ["#0b0b0b", "#252525", "#424242", "#616161", "#828282", "#a5a5a5", "#c9c9c9", "#eeeeee"] },
+      "grid": { "role": "neutral", "displayName": "Grid Line", "canonical": "rgb(0 35 80 / 0.075)", "tonalRamp": ["rgb(0 35 80 / 0.02)", "rgb(0 35 80 / 0.04)", "rgb(0 35 80 / 0.05)", "rgb(0 35 80 / 0.075)", "rgb(0 35 80 / 0.1)", "rgb(0 35 80 / 0.15)", "rgb(0 35 80 / 0.22)", "rgb(0 35 80 / 0.45)"] },
+      "rule": { "role": "neutral", "displayName": "Rule", "canonical": "rgb(0 35 80 / 0.22)", "tonalRamp": ["rgb(0 35 80 / 0.04)", "rgb(0 35 80 / 0.075)", "rgb(0 35 80 / 0.12)", "rgb(0 35 80 / 0.22)", "rgb(0 35 80 / 0.3)", "rgb(0 35 80 / 0.45)", "rgb(0 35 80 / 0.6)", "rgb(0 35 80 / 0.8)"] },
+      "rule-strong": { "role": "neutral", "displayName": "Strong Rule", "canonical": "rgb(0 35 80 / 0.45)", "tonalRamp": ["rgb(0 35 80 / 0.075)", "rgb(0 35 80 / 0.12)", "rgb(0 35 80 / 0.22)", "rgb(0 35 80 / 0.3)", "rgb(0 35 80 / 0.45)", "rgb(0 35 80 / 0.6)", "rgb(0 35 80 / 0.8)", "rgb(0 35 80 / 1)"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "The home page title only, \"Kladde\" set as a cover label (2px ink border, 1px ink outline 5px outside, white fill)." },
+      "headline": { "displayName": "Headline", "purpose": "Page titles; no section prefix on entry titles." },
+      "entry-number": { "displayName": "Entry Number", "purpose": "The two-digit number before a workflow entry's title, in green, baseline-aligned." },
+      "title": { "displayName": "Title", "purpose": "h2 and numbered steps." },
+      "subtitle": { "displayName": "Subtitle", "purpose": "h3." },
+      "lead": { "displayName": "Lead", "purpose": "The home opening line; 52ch; 1.18rem at 600px and below." },
+      "body": { "displayName": "Body", "purpose": "Running text at an 18px root, 68ch measure." },
+      "page-link": { "displayName": "Page Link", "purpose": "Previous and next links at the end of an entry." },
+      "label": { "displayName": "Label", "purpose": "Condition line values and language switch; box labels at 500. Same face sets sidebar section names, table heads, footer titles, sidebar entry numbers." },
+      "cover-label": { "displayName": "Cover Label", "purpose": "The navbar title \"Kladde\"." },
+      "index-number": { "displayName": "Index Number", "purpose": "Entry numbers in the home index; 1.9rem on phones." },
+      "code": { "displayName": "Code", "purpose": "Inline keys and field names as typed." }
+    },
+    "shadows": [
+      { "name": "print-lift", "value": "0 1px 2px rgb(0 35 80 / 0.1), 0 3px 6px -3px rgb(0 35 80 / 0.16)", "purpose": "Taped prints (screenshots, portraits, recordings) only." },
+      { "name": "overlay", "value": "0 2px 4px rgb(0 0 0 / 0.2)", "purpose": "The locale dropdown menu only." }
+    ],
+    "motion": [
+      { "name": "ease-notebook", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Every state transition." },
+      { "name": "duration-touch", "value": "150ms", "purpose": "Tick box border and fill, page-link hover fill." },
+      { "name": "duration-row", "value": "160ms", "purpose": "Home index row hover fill." },
+      { "name": "duration-tick-draw", "value": "240ms", "purpose": "The check stroke drawing in when a step is ticked." },
+      { "name": "focus-ring", "value": "outline: 3px solid #4e7f0a; outline-offset: 2px", "purpose": "Keyboard focus on every focusable element." },
+      { "name": "reduced-motion", "value": "transition: none", "purpose": "Applied to tick box, check, page links and the mobile drawer under prefers-reduced-motion." }
+    ],
+    "breakpoints": [
+      { "name": "phone", "value": "600px", "purpose": "max-width: condition line stacks, index re-shelves, page links stack, percentage-width prints go full width." },
+      { "name": "desktop", "value": "997px", "purpose": "min-width: persistent sidebar and table of contents, margin column widens to 3.5rem." }
+    ]
+  },
+  "components": [
+    {
+      "name": "Navbar Cover",
+      "kind": "nav",
+      "refersTo": "navbar",
+      "description": "The notebook cover: ink bar, the paper cover label, white links with underline states.",
+      "html": "<nav class=\"ds-navbar\"><a class=\"ds-navbar-label\" href=\"#\">Kladde</a><a class=\"ds-navbar-link ds-navbar-link--active\" href=\"#\">How to start</a><a class=\"ds-navbar-link\" href=\"#\">Analysis</a><a class=\"ds-navbar-link\" href=\"#\">About</a></nav>",
+      "css": ".ds-navbar { display: flex; align-items: center; gap: 1.5rem; height: 3.75rem; padding: 0 1rem; background: var(--kl-ink, #002350); border-bottom: 1px solid rgb(0 0 0 / 0.25); font-family: 'Atkinson Hyperlegible Next Variable', 'Atkinson Hyperlegible Next', system-ui, sans-serif; } .ds-navbar-label { padding: 0.28rem 0.7rem 0.22rem; border-radius: 2px; background: var(--kl-paper, #fcfdfe); color: var(--kl-ink, #002350); outline: 1px solid var(--kl-ink, #002350); outline-offset: -4px; font-family: 'Barlow Semi Condensed', 'Arial Narrow', sans-serif; font-weight: 600; font-size: 1.45rem; line-height: 1; text-decoration: none; } .ds-navbar-link { color: #ffffff; font-weight: 600; font-size: 1rem; text-decoration: none; } .ds-navbar-link:hover { color: var(--kl-green-wash, #dcf0cd); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.2em; } .ds-navbar-link--active { color: var(--kl-green-wash, #dcf0cd); text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 0.35em; } .ds-navbar a:focus-visible { outline: 3px solid var(--kl-green, #4e7f0a); outline-offset: 2px; }"
+    },
+    {
+      "name": "Condition Line",
+      "kind": "custom",
+      "refersTo": "condition-box",
+      "description": "The entry-header strip at the top of every page: ruled boxes for entry, update and translation state, ending in the language link.",
+      "html": "<div class=\"ds-condition\"><div class=\"ds-condition-box\"><span class=\"ds-condition-label\">Entry</span><span class=\"ds-condition-value\">01</span></div><div class=\"ds-condition-box\"><span class=\"ds-condition-label\">Updated</span><span class=\"ds-condition-value\">Sep 10, 2026</span></div><div class=\"ds-condition-box\"><span class=\"ds-condition-label\">German</span><span class=\"ds-condition-value\">not yet translated</span></div><a class=\"ds-condition-box ds-switch\" href=\"#\">Deutsch <svg viewBox=\"0 0 24 24\" width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"/><path d=\"M13 6l6 6-6 6\"/></svg></a></div>",
+      "css": ".ds-condition { display: flex; flex-wrap: wrap; justify-content: flex-end; padding-left: 1px; font-family: 'Barlow Semi Condensed', 'Arial Narrow', sans-serif; font-size: 0.95rem; line-height: 1.2; font-variant-numeric: tabular-nums; } .ds-condition-box { display: flex; align-items: baseline; gap: 0.4rem; margin: 0 0 -1px -1px; padding: 0.3rem 0.65rem 0.25rem; border: 1px solid var(--kl-rule-strong, rgb(0 35 80 / 0.45)); background: var(--kl-paper, #fcfdfe); } .ds-condition-label { font-weight: 500; color: var(--kl-ink-soft, #3a5f91); } .ds-condition-value { font-weight: 600; color: var(--kl-ink, #002350); } .ds-switch { align-items: center; font-weight: 600; color: var(--kl-green, #4e7f0a); text-decoration: none; } .ds-switch:hover { color: var(--kl-green-deep, #3d6d00); text-decoration: underline; text-underline-offset: 0.2em; } .ds-switch:focus-visible { outline: 3px solid var(--kl-green, #4e7f0a); outline-offset: 2px; }"
+    },
+    {
+      "name": "Margin Tick Box",
+      "kind": "custom",
+      "refersTo": "tick-box",
+      "description": "Checkbox in the margin column beside a numbered step; the check draws in when ticked.",
+      "html": "<div class=\"ds-step\"><button type=\"button\" role=\"checkbox\" aria-checked=\"true\" class=\"ds-tick\" aria-label=\"Done: 1. Open your ELN Entry\"><svg viewBox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M4.5 12.5l4.5 4.5L19.5 6.5\"/></svg></button><h2 class=\"ds-step-title\">1. Open your ELN Entry</h2></div>",
+      "css": ".ds-step { position: relative; padding-left: 3.5rem; } .ds-step::before { content: ''; position: absolute; top: -1rem; bottom: -1rem; left: 2.7rem; width: 1px; background: var(--kl-gold, #887440); } .ds-step-title { margin: 0; color: var(--kl-ink, #002350); font-family: 'Atkinson Hyperlegible Next Variable', 'Atkinson Hyperlegible Next', system-ui, sans-serif; font-weight: 700; font-size: 1.5rem; line-height: 1.22; } .ds-tick { position: absolute; top: 0.1rem; left: 0; display: grid; place-items: center; width: 1.65rem; height: 1.65rem; padding: 0; border: 1.5px solid var(--kl-ink-soft, #3a5f91); border-radius: 2px; background: var(--kl-white, #ffffff); color: var(--kl-green-deep, #3d6d00); cursor: pointer; transition: border-color 150ms cubic-bezier(0.16, 1, 0.3, 1), background-color 150ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-tick::after { content: ''; position: absolute; inset: -0.55rem; } .ds-tick:hover { border-color: var(--kl-green, #4e7f0a); } .ds-tick:focus-visible { outline: 3px solid var(--kl-green, #4e7f0a); outline-offset: 2px; } .ds-tick svg { width: 1.2rem; height: 1.2rem; stroke-dasharray: 24; stroke-dashoffset: 24; transition: stroke-dashoffset 240ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-tick[aria-checked='true'] { border-color: var(--kl-green, #4e7f0a); background: var(--kl-green-wash, #dcf0cd); } .ds-tick[aria-checked='true'] svg { stroke-dashoffset: 0; }"
+    },
+    {
+      "name": "Taped Print",
+      "kind": "card",
+      "refersTo": "print-frame",
+      "description": "Screenshot or recording in a white mat with two tilted tape strips. On the site the strips are the rendered tape PNGs; this snippet approximates them with their documented tape fill.",
+      "html": "<span class=\"ds-print\"><span class=\"ds-print-media\">Screenshot</span></span>",
+      "css": ".ds-print { position: relative; display: block; width: 18rem; max-width: 100%; margin: 1.5rem 0; padding: 6px; border: 1px solid var(--kl-rule, rgb(0 35 80 / 0.22)); background: var(--kl-white, #ffffff); box-shadow: 0 1px 2px rgb(0 35 80 / 0.1), 0 3px 6px -3px rgb(0 35 80 / 0.16); } .ds-print-media { display: grid; place-items: center; height: 9rem; background: #eef1f5; color: var(--kl-ink-soft, #3a5f91); font-family: system-ui, sans-serif; } .ds-print::before, .ds-print::after { content: ''; position: absolute; top: -13px; width: clamp(54px, 17%, 96px); aspect-ratio: 440 / 128; background: rgb(232 223 196 / 0.84); pointer-events: none; } .ds-print::before { left: 14px; transform: rotate(-3deg); } .ds-print::after { right: 14px; transform: rotate(2.5deg); }"
+    },
+    {
+      "name": "Home Index Row",
+      "kind": "custom",
+      "refersTo": "index-entry",
+      "description": "A full-width entry label in the home index: number, title, section, description, optional tick progress.",
+      "html": "<ol class=\"ds-index\"><li class=\"ds-index-item\"><a class=\"ds-index-link\" href=\"#\"><span class=\"ds-index-number\" aria-hidden=\"true\">01</span><span class=\"ds-index-title\">New Entry</span><span class=\"ds-index-section\">How to start</span><span class=\"ds-index-description\">Start your entry and prepare for the synthesis.</span><span class=\"ds-index-progress\">3 of 6 steps ticked</span></a></li><li class=\"ds-index-item\"><a class=\"ds-index-link\" href=\"#\"><span class=\"ds-index-number\" aria-hidden=\"true\">02</span><span class=\"ds-index-title\">Adding chemical equation</span><span class=\"ds-index-section\">How to start</span><span class=\"ds-index-description\">Quick look at the descriptions of the buttons in the chemical editor.</span></a></li></ol>",
+      "css": ".ds-index { list-style: none; margin: 0; padding: 0; max-width: 48rem; border-top: 1px solid var(--kl-rule-strong, rgb(0 35 80 / 0.45)); font-family: 'Atkinson Hyperlegible Next Variable', 'Atkinson Hyperlegible Next', system-ui, sans-serif; } .ds-index-item { border-bottom: 1px solid var(--kl-rule-strong, rgb(0 35 80 / 0.45)); } .ds-index-link { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr) auto; column-gap: 0.85rem; row-gap: 0.15rem; align-items: baseline; min-height: 4.25rem; padding: 0.85rem 0.6rem; color: var(--kl-ink, #002350); text-decoration: none; transition: background-color 160ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-index-link:hover { background: rgb(220 240 205 / 0.6); } .ds-index-link:focus-visible { outline: 3px solid var(--kl-green, #4e7f0a); outline-offset: 2px; } .ds-index-number { grid-row: span 3; font-family: 'Barlow Semi Condensed', 'Arial Narrow', sans-serif; font-weight: 600; font-size: 2.25rem; line-height: 0.95; color: var(--kl-green, #4e7f0a); font-variant-numeric: tabular-nums; } .ds-index-title { font-weight: 700; font-size: 1.15rem; line-height: 1.3; } .ds-index-section { justify-self: end; font-family: 'Barlow Semi Condensed', 'Arial Narrow', sans-serif; font-weight: 500; font-size: 0.95rem; color: var(--kl-gold-ink, #6f5b27); } .ds-index-description { grid-column: 2 / 4; color: var(--kl-ink-soft, #3a5f91); font-size: 1rem; line-height: 1.45; } .ds-index-progress { grid-column: 2 / 4; font-family: 'Barlow Semi Condensed', 'Arial Narrow', sans-serif; font-weight: 600; font-size: 0.95rem; color: var(--kl-green-deep, #3d6d00); font-variant-numeric: tabular-nums; }"
+    },
+    {
+      "name": "Page Links",
+      "kind": "nav",
+      "refersTo": "page-link",
+      "description": "Previous and next entry links under a strong rule, with SVG arrows; one row on wide screens, stacked at 600px and below.",
+      "html": "<nav class=\"ds-pages\"><a class=\"ds-page-link\" href=\"#\"><span class=\"ds-page-label\"><svg viewBox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M19 12H5\"/><path d=\"M11 6l-6 6 6 6\"/></svg><span>Welcome</span></span></a><a class=\"ds-page-link ds-page-link--next\" href=\"#\"><span class=\"ds-page-label\"><span>Use snippets to describe your scheme</span><svg viewBox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"/><path d=\"M13 6l6 6-6 6\"/></svg></span></a></nav>",
+      "css": ".ds-pages { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; padding-top: 1.1rem; border-top: 1px solid var(--kl-rule-strong, rgb(0 35 80 / 0.45)); font-family: 'Atkinson Hyperlegible Next Variable', 'Atkinson Hyperlegible Next', system-ui, sans-serif; } .ds-page-link { padding: 0.6rem 0.35rem; border-radius: 2px; text-decoration: none; transition: background-color 150ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-page-link:hover { background: rgb(0 35 80 / 0.045); } .ds-page-link:focus-visible { outline: 3px solid var(--kl-green, #4e7f0a); outline-offset: 2px; } .ds-page-label { display: flex; align-items: flex-start; gap: 0.5rem; font-size: 1.12rem; font-weight: 650; line-height: 1.3; color: var(--kl-green, #4e7f0a); } .ds-page-link--next .ds-page-label { justify-content: flex-end; text-align: right; } .ds-page-label > span { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.2em; } .ds-page-link:hover .ds-page-label { color: var(--kl-green-deep, #3d6d00); } .ds-page-link:hover .ds-page-label > span { text-decoration-thickness: 2px; } .ds-page-label svg { flex-shrink: 0; width: 1.3em; height: 1.3em; } @media (max-width: 600px) { .ds-pages { grid-template-columns: minmax(0, 1fr); } .ds-page-link { justify-self: start; } .ds-page-link--next { justify-self: end; } }"
+    },
+    {
+      "name": "Sidebar Entry",
+      "kind": "nav",
+      "refersTo": "menu-link-active",
+      "description": "Sidebar index links with two-digit gold-ink entry numbers; the current entry in green wash.",
+      "html": "<ul class=\"ds-menu\"><li><a class=\"ds-menu-link ds-menu-link--active\" href=\"#\"><span class=\"ds-menu-number\">01</span>New Entry</a></li><li><a class=\"ds-menu-link\" href=\"#\"><span class=\"ds-menu-number\">02</span>Adding chemical equation</a></li></ul>",
+      "css": ".ds-menu { list-style: none; margin: 0; padding: 0; width: 16rem; font-family: 'Atkinson Hyperlegible Next Variable', 'Atkinson Hyperlegible Next', system-ui, sans-serif; font-size: 1rem; } .ds-menu-link { display: flex; align-items: baseline; padding: 0.45rem 0.6rem; border-radius: 2px; color: var(--kl-ink, #002350); font-weight: 500; line-height: 1.3; text-decoration: none; } .ds-menu-link:hover { background: rgb(0 35 80 / 0.05); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.2em; } .ds-menu-link:focus-visible { outline: 3px solid var(--kl-green, #4e7f0a); outline-offset: 2px; } .ds-menu-link--active { background: var(--kl-green-wash, #dcf0cd); font-weight: 700; } .ds-menu-number { flex-shrink: 0; min-width: 1.7rem; margin-right: 0.45rem; font-family: 'Barlow Semi Condensed', 'Arial Narrow', sans-serif; font-weight: 600; font-variant-numeric: tabular-nums; color: var(--kl-gold-ink, #6f5b27); } .ds-menu-link--active .ds-menu-number { color: var(--kl-green-deep, #3d6d00); }"
+    },
+    {
+      "name": "Note and Notice",
+      "kind": "card",
+      "refersTo": "note-box",
+      "description": "A dashed note box for blockquotes, and the gold-bordered notice on untranslated German pages.",
+      "html": "<blockquote class=\"ds-note\"><p>Now your ELN is ready to use!</p></blockquote><p class=\"ds-notice\" role=\"note\">This page is not translated yet, so it is shown in English.</p>",
+      "css": ".ds-note { max-width: 68ch; margin: 0 0 1rem; padding: 0.75rem 1rem; border: 1px dashed var(--kl-rule-strong, rgb(0 35 80 / 0.45)); background: var(--kl-paper, #fcfdfe); color: var(--kl-ink, #002350); font-family: 'Atkinson Hyperlegible Next Variable', 'Atkinson Hyperlegible Next', system-ui, sans-serif; font-size: 1rem; } .ds-note p { margin: 0; } .ds-notice { max-width: 68ch; margin: 0; padding: 0.7rem 1rem; border: 1px solid var(--kl-gold, #887440); background: var(--kl-paper, #fcfdfe); color: var(--kl-ink, #002350); font-family: 'Atkinson Hyperlegible Next Variable', 'Atkinson Hyperlegible Next', system-ui, sans-serif; font-size: 1rem; line-height: 1.45; }"
+    },
+    {
+      "name": "Ruled Table",
+      "kind": "custom",
+      "refersTo": "table-cell",
+      "description": "Data in ruled columns: white cells, 1px rules, tabular figures, label-face heads.",
+      "html": "<table class=\"ds-table\"><thead><tr><th>Reagent</th><th>n (mmol)</th><th>equiv</th></tr></thead><tbody><tr><td>Aniline</td><td>10.0</td><td>1.00</td></tr><tr><td>NaNO<sub>2</sub></td><td>11.0</td><td>1.10</td></tr></tbody></table>",
+      "css": ".ds-table { border-collapse: collapse; background: var(--kl-white, #ffffff); color: var(--kl-ink, #002350); font-family: 'Atkinson Hyperlegible Next Variable', 'Atkinson Hyperlegible Next', system-ui, sans-serif; font-variant-numeric: tabular-nums; } .ds-table th, .ds-table td { padding: 0.55rem 0.75rem; border: 1px solid var(--kl-rule, rgb(0 35 80 / 0.22)); vertical-align: top; } .ds-table thead th { background: rgb(0 35 80 / 0.04); font-family: 'Barlow Semi Condensed', 'Arial Narrow', sans-serif; font-weight: 600; font-size: 1.02rem; text-align: left; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Laborkladde",
+    "overview": "The documentation is the squared-paper lab notebook that Kladde replaces. Every page is a notebook entry: white paper with a faint 5 mm grid under everything, FSU-blue ink for type, faculty green for whatever can be followed or done, a thin gold margin rule, and screenshots and recordings taped in with strips of masking tape. Guides are numbered entries (00 for the home page, 01 to 08 for the workflow) and open with a condition line of ruled boxes: entry number, last update, translation state, and a link to the other language.\n\nThe reading scene is a phone or tablet on the lab bench under bright light, so the world is light only, high in contrast and generous in size (an 18px root, a 68ch measure, tick boxes with a padded tap area). Density stays calm: one heading, one print, one paragraph at a time, separated by ruled lines and whitespace rather than cards. The notebook's own devices carry the identity (ruled boxes, tabular figures, the margin column, tape); decoration that a notebook would not have stays out.\n\nColours harmonize with Friedrich Schiller University Jena without following its corporate design, and the university logo is not used. The site refuses the stock docs arrangement of a blue hero, a \"Get started\" button and three icon cards. Nothing moves on load; only what the reader touches responds.",
+    "keyCharacteristics": [
+      "Squared paper (20px grid) under every page; content surfaces are white or paper, never tinted panels.",
+      "FSU-blue ink for all type; green only for links, the current entry, entry numbers and ticks; gold only as a line.",
+      "A condensed label face for what a notebook would print (cover label, entry numbers, condition line, section names, table heads); a hyperlegible text face for everything read.",
+      "A margin column with a gold rule, holding tick boxes beside numbered steps.",
+      "Screenshots and recordings as taped prints: white mat, hairline border, soft lift, two tilted tape strips.",
+      "Square or 2px corners throughout; ruled lines instead of cards."
+    ],
+    "rules": [
+      { "name": "The Ink-and-Green Rule", "body": "Type is ink. Green marks only what can be followed or done: a link, the current entry, an entry number, a tick. If it is green and cannot be pressed or is not a number, it is wrong.", "section": "colors" },
+      { "name": "The Readable Green Rule", "body": "The faculty green #74A740 is never used as a colour on the page; it fails text contrast on white (2.86:1). Text and marks use the text-grade green or deep green.", "section": "colors" },
+      { "name": "The Gold Line Rule", "body": "FSU gold is a line (the margin rule, the notice border). Any gold that is read as text uses gold ink.", "section": "colors" },
+      { "name": "The One Paper Rule", "body": "Light theme only; the colour-mode switch is disabled and the system preference is ignored. The grid shows under every page, and nothing sits on tinted panels: surfaces are paper or white.", "section": "colors" },
+      { "name": "The Printed Label Rule", "body": "Barlow Semi Condensed sets only what a notebook would print: the cover label, page titles, entry numbers, box labels, section names, table heads. Anything read as a sentence, including h2 and h3, is Atkinson.", "section": "typography" },
+      { "name": "The Figures-as-Data Rule", "body": "Entry numbers, dates, table figures, step counts and timestamps use tabular figures; entry numbers are always two digits with a leading zero (00 to 08).", "section": "typography" },
+      { "name": "The Printed-Not-Written Rule", "body": "No handwriting or script faces anywhere; the ink metaphor lives in colour, not in letterforms.", "section": "typography" },
+      { "name": "The Margin Column Rule", "body": "Every entry has a margin column with a gold rule, and only tick boxes live in it. Content never enters the margin; the margin never holds decoration.", "section": "layout" },
+      { "name": "The Taped Print Rule", "body": "A shadow means \"this is stuck onto the paper\". Prints get it; cards, boxes, buttons and headers do not.", "section": "elevation" },
+      { "name": "The Hairline Corner Rule", "body": "Nothing is rounded beyond 2px. No pills, no rounded cards.", "section": "shapes" }
+    ],
+    "dos": [
+      "Do set every page on paper (#fcfdfe) with the 20px grid (rgb(0 35 80 / 0.075)), and lay white (#ffffff) only under things stuck onto it: prints, tables, tick boxes, code.",
+      "Do keep type in ink (#002350) and reserve text-grade green (#4e7f0a) for links, entry numbers, the current entry and ticks, with deep green (#3d6d00) on hover.",
+      "Do open every doc page with the condition line, and give each workflow entry a two-digit number in tabular figures.",
+      "Do wrap screenshots and recordings as taped prints (6px white mat, 1px rule, print lift, two tilted tape strips) and keep the print itself square to the page.",
+      "Do separate content with 1px rules (rgb(0 35 80 / 0.22) inside content, rgb(0 35 80 / 0.45) for structure) and whitespace.",
+      "Do keep paragraphs to 68ch, the root at 18px and tap targets at least the tick box's padded area.",
+      "Do stack the page links at 600px and below (previous left, next right on the row below) and keep them on one row above that.",
+      "Do use inline SVG line icons (24px box, round caps, stroke 1.75) coloured by currentColor."
+    ],
+    "donts": [
+      "Don't use the faculty green #74A740 as a colour on the page, or FSU gold #887440 as text.",
+      "Don't add a dark theme or a colour-mode switch.",
+      "Don't use the official university logo or copy the university's corporate design.",
+      "Don't build the stock docs arrangement of a blue hero, a \"Get started\" button and three icon cards.",
+      "Don't use handwriting or script faces.",
+      "Don't flag notes with a coloured side bar; box them in dashes.",
+      "Don't put shadows on anything but taped prints (and the transient locale dropdown), and don't round corners beyond 2px.",
+      "Don't put small labels or eyebrows above headings, prefix entry titles with their section (\"How to start >\"), or use emoji or text glyphs as icons.",
+      "Don't animate anything on load; motion answers a touch."
+    ]
+  }
+}

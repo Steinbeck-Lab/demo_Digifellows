@@ -21,7 +21,7 @@
   --kl-green-deep: #3d6d00;
   --kl-green-wash: #dcf0cd;
   --kl-gold: #887440; /* the margin rule */
-  --kl-gold-ink: #6f5b27; /* gold text: 5.7:1 on the grid lines */
+  --kl-gold-ink: #6f5b27; /* gold text: 6.4:1 on paper, 5.6:1 on the grid lines */
   --kl-cover: #002350;
 
   --kl-font-text: 'Atkinson Hyperlegible Next Variable', 'Atkinson Hyperlegible Next', system-ui, -apple-system,
