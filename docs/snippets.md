@@ -1,4 +1,11 @@
-# How to start > Snippets
+---
+sidebar_label: Snippets
+pagination_label: Snippets
+description: Use of shortcuts in your descriptions.
+pagination_prev: new-entry
+pagination_next: sample-analysis
+---
+# Snippets
 
 > Before you lose your patience, please just allow us to show you the following feature:
 > <video autoplay loop muted playinline width="100%" alt="demonstration of snippet insertion"> <source src="../assets/videos/snippets-1.mp4" type="video/mp4"></video>
@@ -35,7 +42,5 @@ This is meant for storing information of reaction conditions such as temperature
 1. Return to 'Reaction' and scroll to the main text box. On the right side of the main text box you may see the previously configured predefined sentences and meta information. 
 2. Inside the text box simply type your customized key of your predefined sentence(s), type `_` and your key of the meta information configured then hit 'Space'/'Tab'/'Enter'. For reagents type `r` and the corresponding ID (`1`, `2`, ....) as listed above and hit 'Space' / 'Tab' / 'Enter'.
 > After the insertion of the snippet (predef. sentences/meta info./reagent) a space is automatically inserted *after the character*, where you hit your key for insertion. To avoid that simply insert one space before the next character.<br>
->[Jump to ](#) <a href="javascript:void(0)" onclick="seekVideo('snippets-preset', 172)">▶ 02:52</a>
+> <a href="#snippets-preset" data-video="snippets-preset" data-time="172" class="kl-timestamp">Jump to 02:52</a>
 3. To amend the predefined sentences, go back to 'Prefs'; to amend meta information, change the values/text directly on the right; reagents ID cannot be modified.
-
-<p style="display: flex; justify-content: space-between" markdown="span">[← New Entry](new-entry.md) [Sample Analysis →](sample-analysis.md)</p>

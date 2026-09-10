@@ -1,7 +1,7 @@
 # Dr. Kevin Maik Jablonka
 ## Research Group Leader of lamalab
 
-<img src="../assets/images/kevin-jablonka.jpg" width=20%/>
+<img src="../assets/images/kevin-jablonka.jpg" alt="Dr. Kevin Maik Jablonka" class="kl-portrait"/>
 
 Kevin Jablonka is a chemist by training and diffused into machine learning. He finished his PhD at EPFL and moved directly after it, in June 2023, to Jena.
 

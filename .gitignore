@@ -1,0 +1,15 @@
+# Dependencies
+node_modules/
+
+# Docusaurus build output and caches
+build/
+.docusaurus/
+.cache-loader/
+
+# Impeccable review captures (regenerated on every review)
+.impeccable/review/
+
+# Local environments and editors
+.venv/
+.DS_Store
+*.log

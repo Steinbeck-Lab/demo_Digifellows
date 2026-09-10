@@ -1,0 +1,18 @@
+{
+  "title": {
+    "message": "Kladde",
+    "description": "The title in the navbar"
+  },
+  "item.label.How to start": {
+    "message": "Erste Schritte",
+    "description": "Navbar item with label How to start"
+  },
+  "item.label.Analysis": {
+    "message": "Analytik",
+    "description": "Navbar item with label Analysis"
+  },
+  "item.label.About": {
+    "message": "Über Kladde",
+    "description": "Navbar item with label About"
+  }
+}
