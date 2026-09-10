@@ -14,7 +14,7 @@ Stay on this page. Here we do all the configuration.
 
 ## Video: thorough walkthrough
 
-<video id="snippets-preset" muted controls width="100%">
+<video id="snippets-preset" muted controls width="100%" poster="../assets/videos/thumbnail_snippets-preset.png">
   <source src="../assets/videos/snippets-preset.mp4" type="video/mp4">
 </video>
 
