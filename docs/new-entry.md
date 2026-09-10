@@ -32,7 +32,7 @@ On the page of the ELN entry enter a title of your choice for the reaction and c
 4. Use the Cleanup Button <img alt="Clean Up Tool" style="height: 1.5em; width: auto; vertical-align: top" src="../assets/images/img_cleanup.png"> to clean up the equation. 
 
 ### Method 2: First chemical equation then data entry
-[Click here](chemicaleditor.md) for more information about the *OpenChemLib* chemical editor.
+[Click here](adding-chemical-equation.md) for more information about the *OpenChemLib* chemical editor.
 
 > For those who are just looking for a Copy & Paste: <br>
 > <img alt="5th Key" style="width:1.5em; vertical-align:top;" src="../assets/images/img_chemicaleditor_tr_5.png"> then <img alt="2nd Key" style="width:1.5em; vertical-align:top;" src="../assets/images/img_chemicaleditor_tr_2.png"> (left: reactant; right: product): across **different** entries.<br>
@@ -40,7 +40,7 @@ On the page of the ELN entry enter a title of your choice for the reaction and c
 > Or use the Lasso Pointer Tool <img alt="Left 5th Key" style="width:1.5em; vertical-align:top;" src="../assets/images/img_chemicaleditor_left_5.png"> to select the target molecule, hold 'Shift' and drag the molecule to create a copy <br>
 
 1. Draw each chemical structure you need inside the chemical editor, or paste your chemical equation from e.g. ChemDraw or ChemSketch (if nothing happens, try "copy as SMILES" :) )
-2. Repeat Step 1 to 5 except 4 in [Method 1](how-to-start.md#method-1-recommended-first-data-entry-then-chemical-equation)
+2. Repeat Step 1 to 5 except 4 in [Method 1](#method-1-recommended-first-data-entry-then-chemical-equation)
 
 ## 4. Calculation of the amounts of reagents required (*Ansatztberechnung*)
 > *The following instructions are only based on OC2-Praktikum.*
@@ -82,4 +82,4 @@ Change the status of your ELN entry by clicking one of the buttons or customize 
 
 > Now your ELN is ready to use!
 
-Next: [Scheme-Steps of the synthesis](scheme.md)
+Next: [Snippets](snippets.md)

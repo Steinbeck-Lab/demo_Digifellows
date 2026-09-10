@@ -1,6 +1,18 @@
-site_name: (Demo) Documentation
+site_name: Kladde
+site_url: https://kladde.uni-jena.de/
 theme:
   name: material
+
+plugins:
+  - search
+  - redirects:
+      redirect_maps:
+        how-to-start.md: new-entry.md
+        chemicaleditor.md: adding-chemical-equation.md
+        scheme.md: snippets.md
+
+markdown_extensions:
+  - footnotes
 
 nav:
   - Welcome: index.md

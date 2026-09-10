@@ -40,4 +40,4 @@ The following instructions target users who are unfamiliar with _OpenChemLib_ ch
 ## Tips and Tricks
 
 ### Type the chemical symbol directly to change the atom.
-[Jump to ](#) <a href="javascript:void(0)" onclick="seekVideo(68)">▶ 01:08</a>
+[Jump to ](#) <a href="javascript:void(0)" onclick="seekVideo('sandmeyer', 68)">▶ 01:08</a>

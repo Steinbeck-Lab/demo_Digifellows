@@ -35,5 +35,5 @@ This is meant for storing information of reaction conditions such as temperature
 1. Return to 'Reaction' and scroll to the main text box. On the right side of the main text box you may see the previously configured predefined sentences and meta information. 
 2. Inside the text box simply type your customized key of your predefined sentence(s), type `_` and your key of the meta information configured then hit 'Space'/'Tab'/'Enter'. For reagents type `r` and the corresponding ID (`1`, `2`, ....) as listed above and hit 'Space' / 'Tab' / 'Enter'.
 > After the insertion of the snippet (predef. sentences/meta info./reagent) a space is automatically inserted *after the character*, where you hit your key for insertion. To avoid that simply insert one space before the next character.<br>
->[Jump to ](#) <a href="javascript:void(0)" onclick="seekVideo(172)">▶ 02:52</a>
+>[Jump to ](#) <a href="javascript:void(0)" onclick="seekVideo('snippets-preset', 172)">▶ 02:52</a>
 3. To amend the predefined sentences, go back to 'Prefs'; to amend meta information, change the values/text directly on the right; reagents ID cannot be modified.

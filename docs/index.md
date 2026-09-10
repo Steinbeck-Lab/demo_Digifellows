@@ -5,10 +5,10 @@ Here you can find tutorials and help for the big variety of functions available 
 
 For the suggested **complete** workflow please check out 
 
-- [How to start](how-to-start.md): start your entry and prepare for the synthesis
-    - [Adding chemical equation](chemicaleditor.md): quick look at the descriptions of the buttons in the chemical editor
+- [How to start](new-entry.md): start your entry and prepare for the synthesis
+    - [Adding chemical equation](adding-chemical-equation.md): quick look at the descriptions of the buttons in the chemical editor
     - [Snippets](snippets.md): use of shortcuts in your descriptions
-- [Sample Analysis](sample-analysis.md): entry for information such as melting point, GC-result and IR-spectra
+- Sample Analysis: entry for information such as melting point, GC-result and IR-spectra
 - Analyses: learn to use different available tools ([IR](ir.md), [NMR](nmr.md)) to anaylse your products
 
 
