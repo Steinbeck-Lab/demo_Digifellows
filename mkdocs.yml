@@ -6,11 +6,16 @@ nav:
   - Welcome: index.md
   - About:
       - What is ELN?: eln.md
-      - Meet our team: team.md
+      - Meet our team:
+          - Prof. Dr. Christoph Steinbeck: christoph.md
+          - Dr. Kevin Maik Jablonka: kevin.md
+          - Dr. Kohulan Rajan: kohulan.md
+          - Soyee Chan: soyee.md
       - License: license.md
-  - How to start: how-to-start.md
-  - Adding chemical equation: chemicaleditor.md
-  - Scheme: scheme.md # steps of experiments
+  - How to start:
+      - New Entry: new-entry.md
+      - Adding chemical equation: adding-chemical-equation.md
+      - Snippets: snippets.md # steps of experiments
   - Analysis:
       - IR: ir.md
       - NMR: nmr.md
