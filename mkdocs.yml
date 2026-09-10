@@ -13,6 +13,7 @@ plugins:
 
 markdown_extensions:
   - footnotes
+  - md_in_html
 
 nav:
   - Welcome: index.md
@@ -29,6 +30,7 @@ nav:
       - Adding chemical equation: adding-chemical-equation.md
       - Snippets: snippets.md # steps of experiments
   - Analysis:
+      - Sample Analysis: sample-analysis.md
       - IR: ir.md
       - NMR: nmr.md
       - MS: ms.md

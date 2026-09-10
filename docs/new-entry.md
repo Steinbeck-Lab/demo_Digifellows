@@ -82,4 +82,4 @@ Change the status of your ELN entry by clicking one of the buttons or customize 
 
 > Now your ELN is ready to use!
 
-Next: [Snippets](snippets.md)
+<p style="text-align: right" markdown="span">[Use snippets to describe your scheme →](snippets.md)</p>
