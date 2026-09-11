@@ -27,7 +27,7 @@ Stay on this page. Here we do all the configuration.
 
 ### Predefined sentences
 1. Customize and add your own key inside the box 'Predefined sentences' on the left. Beware: **umlauts (ä, ö, ü) are not applicable!**
-2. Enter / Edit your predefined sentence on the right **without** the keys (e.g. `r1`). Placeholders (e.g. '[ ]' in the clip) for them are nevertheless recommended. 
+2. Enter / Edit your predefined sentence on the right **without** the keys (e.g. `r1`). Placeholders (e.g. '[ ]' or '_' in the clip) for them are nevertheless recommended. 
 > Note: keys like `r1` or `_temp1` do not work inside a predefined sentence. Unlike in the main text, placeholders inside a predefined sentence will not be replaced with your customized values/text.
 3. The predefined sentence is now shown on the left. To use it simply type your customized key inside the main text box in 'Reaction' then hit 'Space'/'Tab'/'Enter'.
 
