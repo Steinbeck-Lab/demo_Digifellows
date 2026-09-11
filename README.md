@@ -221,8 +221,8 @@ Customized parts of Docusaurus:
 - **Media:** the largest videos are 33 MB (`snippets-preset.mp4`), 18 MB, 14 MB, 13 MB and 11 MB;
   every file under `static/` is copied into both language builds. `kevin-jablonka.jpg` is a
   3024×3024 photo shown at portrait size. The three autoplay clips have no poster.
-- **Unused files:** `static/assets/images/img_chemicaleditor_topright.png`,
-  `static/assets/images/img_hexagon.png`, `static/assets/videos/tipsandtricks_1.mp4`.
+- **Unused files:** `static/assets/images/img_chemicaleditor_topright.png` and
+  `static/assets/images/img_hexagon.png`.
 - **Copy and markup:** typos on several pages (for example "ammendment", "Ansatztberechnung",
   "Assistent"); `playinline` instead of `playsinline` and a `<font>` tag in `snippets.md`; an
   invalid `background-color: b8b8b8` in `new-entry.md`; `eln.md` has two `#` titles.
