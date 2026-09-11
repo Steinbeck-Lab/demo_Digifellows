@@ -1,0 +1,753 @@
+/**
+ * Kladde — the Laborkladde theme.
+ *
+ * The documentation is the squared-paper lab notebook that Kladde replaces: FSU-blue ink on white
+ * grid paper, faculty-green marks, an FSU-gold margin rule, screenshots and recordings taped in.
+ * Colours harmonize with Friedrich Schiller University Jena (blue #002350, gold #887440) and the
+ * Chemisch-Geowissenschaftliche Fakultät (#74A740, darkened to #4E7F0A so it reads as text).
+ */
+
+/* ── Tokens ─────────────────────────────────────────────────────────────── */
+
+:root {
+  --kl-paper: #fcfdfe;
+  --kl-white: #ffffff;
+  --kl-grid: rgb(0 35 80 / 0.075);
+  --kl-ink: #002350;
+  --kl-ink-soft: #3a5f91;
+  --kl-rule: rgb(0 35 80 / 0.22);
+  --kl-rule-strong: rgb(0 35 80 / 0.45);
+  --kl-green: #4e7f0a;
+  --kl-green-deep: #3d6d00;
+  --kl-green-wash: #dcf0cd;
+  --kl-gold: #887440; /* the margin rule */
+  --kl-gold-ink: #6f5b27; /* gold text: 6.4:1 on paper, 5.6:1 on the grid lines */
+  --kl-cover: #002350;
+
+  --kl-font-text: 'Atkinson Hyperlegible Next Variable', 'Atkinson Hyperlegible Next', system-ui, -apple-system,
+    'Segoe UI', sans-serif;
+  --kl-font-label: 'Barlow Semi Condensed', 'Arial Narrow', sans-serif;
+  --kl-font-code: ui-monospace, 'SFMono-Regular', 'Cascadia Mono', Menlo, Consolas, monospace;
+
+  --kl-cell: 20px; /* 5 mm squares */
+  --kl-margin: 2.6rem; /* notebook margin column: tick boxes, gold rule */
+  --kl-measure: 68ch;
+  --kl-ease: cubic-bezier(0.16, 1, 0.3, 1);
+
+  --ifm-color-primary: #4e7f0a;
+  --ifm-color-primary-dark: #467209;
+  --ifm-color-primary-darker: #426c09;
+  --ifm-color-primary-darkest: #365907;
+  --ifm-color-primary-light: #568c0b;
+  --ifm-color-primary-lighter: #5a920c;
+  --ifm-color-primary-lightest: #66a50d;
+
+  --ifm-background-color: transparent;
+  --ifm-background-surface-color: var(--kl-paper);
+  --ifm-font-color-base: var(--kl-ink);
+  --ifm-color-content: var(--kl-ink);
+  --ifm-color-content-secondary: var(--kl-ink-soft);
+  --ifm-heading-color: var(--kl-ink);
+  --ifm-font-family-base: var(--kl-font-text);
+  --ifm-heading-font-family: var(--kl-font-text);
+  --ifm-font-family-monospace: var(--kl-font-code);
+  --ifm-font-size-base: 112.5%;
+  --ifm-line-height-base: 1.6;
+  --ifm-heading-line-height: 1.22;
+  --ifm-heading-font-weight: 700;
+  --ifm-h1-font-size: clamp(2.1rem, 1.5rem + 2.4vw, 3.1rem);
+  --ifm-h2-font-size: 1.5rem;
+  --ifm-h3-font-size: 1.2rem;
+  --ifm-link-color: var(--kl-green);
+  --ifm-link-hover-color: var(--kl-green-deep);
+  --ifm-link-decoration: underline;
+  --ifm-link-hover-decoration: underline;
+  --ifm-global-radius: 2px;
+  --ifm-hr-border-color: var(--kl-rule);
+  --ifm-table-border-color: var(--kl-rule);
+  --ifm-table-stripe-background: transparent;
+  --ifm-table-head-background: rgb(0 35 80 / 0.04);
+  --ifm-code-background: var(--kl-white);
+  --ifm-code-font-size: 88%;
+  --ifm-code-border-radius: 2px;
+  --ifm-code-padding-horizontal: 0.3em;
+  --ifm-code-padding-vertical: 0.05em;
+  --ifm-blockquote-border-left-width: 1px;
+  --ifm-blockquote-border-color: var(--kl-rule-strong);
+  --ifm-blockquote-color: var(--kl-ink);
+  --ifm-navbar-background-color: var(--kl-cover);
+  --ifm-navbar-link-color: #ffffff;
+  --ifm-navbar-link-hover-color: var(--kl-green-wash);
+  --ifm-navbar-link-active-color: var(--kl-green-wash);
+  --ifm-navbar-height: 3.75rem;
+  --ifm-navbar-shadow: none;
+  --ifm-menu-color: var(--kl-ink);
+  --ifm-menu-color-active: var(--kl-ink);
+  --ifm-menu-color-background-active: var(--kl-green-wash);
+  --ifm-menu-color-background-hover: rgb(0 35 80 / 0.05);
+  --ifm-toc-border-color: var(--kl-rule);
+  --ifm-footer-background-color: transparent;
+  --ifm-footer-color: var(--kl-ink-soft);
+  --ifm-footer-link-color: var(--kl-ink);
+  --ifm-footer-link-hover-color: var(--kl-green-deep);
+  --ifm-footer-title-color: var(--kl-ink);
+  --ifm-pagination-nav-border-radius: 2px;
+  --ifm-dropdown-background-color: var(--kl-paper);
+  --ifm-dropdown-link-color: var(--kl-ink);
+  --ifm-dropdown-hover-background-color: var(--kl-green-wash);
+  --docusaurus-highlighted-code-line-bg: var(--kl-green-wash);
+  --docusaurus-progress-bar-color: var(--kl-green);
+}
+
+@media (min-width: 997px) {
+  :root {
+    --kl-margin: 3.5rem;
+  }
+}
+
+/* ── Paper, ink and the browser's own surfaces ──────────────────────────── */
+
+html {
+  background-color: var(--kl-paper);
+  background-image: linear-gradient(var(--kl-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--kl-grid) 1px, transparent 1px);
+  background-size: var(--kl-cell) var(--kl-cell);
+  scrollbar-color: var(--kl-rule-strong) var(--kl-paper);
+}
+
+body {
+  background-color: transparent;
+  color: var(--kl-ink);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background-color: var(--kl-green-wash);
+  color: var(--kl-ink);
+}
+
+input,
+textarea {
+  caret-color: var(--kl-green);
+}
+
+:focus-visible {
+  outline: 3px solid var(--kl-green);
+  outline-offset: 2px;
+}
+
+.kl-sr-only,
+.pagination-nav__sublabel {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* ── Navbar: the notebook cover with its label ──────────────────────────── */
+
+.navbar {
+  border-bottom: 1px solid rgb(0 0 0 / 0.25);
+}
+
+.navbar__brand {
+  margin-right: 1.25rem;
+}
+
+.navbar__title {
+  padding: 0.28rem 0.7rem 0.22rem;
+  border-radius: 2px;
+  background-color: var(--kl-paper);
+  color: var(--kl-ink);
+  outline: 1px solid var(--kl-ink);
+  outline-offset: -4px;
+  font-family: var(--kl-font-label);
+  font-weight: 600;
+  font-size: 1.45rem;
+  line-height: 1;
+}
+
+.navbar__link {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.navbar__link,
+.menu__link,
+.table-of-contents__link,
+.footer__link-item,
+.dropdown__link {
+  text-decoration: none;
+}
+
+.navbar__link:hover,
+.menu__link:hover,
+.table-of-contents__link:hover,
+.footer__link-item:hover,
+.dropdown__link:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+
+.navbar__link.navbar__link--active {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.35em;
+}
+
+.navbar__toggle {
+  color: #ffffff;
+}
+
+.navbar__search-input {
+  border-radius: 2px;
+  background-color: var(--kl-paper);
+  color: var(--kl-ink);
+  font-size: 1rem;
+}
+
+.navbar__search-input::placeholder {
+  color: var(--kl-ink-soft);
+}
+
+.navbar-sidebar {
+  background-color: var(--kl-paper);
+}
+
+.navbar-sidebar__brand {
+  background-color: var(--kl-cover);
+}
+
+.navbar-sidebar__back {
+  background-color: rgb(0 35 80 / 0.05);
+  color: var(--kl-ink);
+}
+
+.dropdown__menu {
+  border: 1px solid var(--kl-rule-strong);
+  border-radius: 2px;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 0.2);
+}
+
+.theme-doc-sidebar-container {
+  transition: none;
+}
+
+#nprogress .peg {
+  box-shadow: none;
+}
+
+/* ── Sidebar: the index, entries numbered in the margin ─────────────────── */
+
+.theme-doc-sidebar-container {
+  border-right: 1px solid var(--kl-rule) !important;
+}
+
+.theme-doc-sidebar-menu {
+  counter-reset: kl-entry;
+  font-size: 1rem;
+}
+
+.menu__link {
+  padding: 0.45rem 0.6rem;
+  border-radius: 2px;
+  line-height: 1.3;
+  font-weight: 500;
+}
+
+.menu__list-item-collapsible > .menu__link--sublist,
+.theme-doc-sidebar-item-category > .menu__list-item-collapsible > .menu__link {
+  font-family: var(--kl-font-label);
+  font-weight: 600;
+  font-size: 1.08rem;
+}
+
+.kl-entry {
+  counter-increment: kl-entry;
+}
+
+.theme-doc-sidebar-menu > .menu__list-item.kl-entry {
+  padding-left: var(--ifm-menu-link-padding-horizontal);
+}
+
+.kl-entry > .menu__link {
+  display: flex;
+  align-items: baseline;
+}
+
+.kl-entry > .menu__link::before {
+  content: counter(kl-entry, decimal-leading-zero);
+  flex-shrink: 0;
+  min-width: 1.7rem;
+  margin-right: 0.45rem;
+  font-family: var(--kl-font-label);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--kl-gold-ink);
+}
+
+.menu__link--active:not(.menu__link--sublist) {
+  font-weight: 700;
+}
+
+.kl-entry > .menu__link--active::before {
+  color: var(--kl-green-deep);
+}
+
+/* ── The page: margin rule, condition line, entry number ────────────────── */
+
+article:has(> .kl-page) {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-left: var(--kl-margin);
+}
+
+article:has(> .kl-page)::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: calc(var(--kl-margin) - 0.8rem);
+  width: 1px;
+  background-color: var(--kl-gold);
+}
+
+/* The page wrapper adds no box: its condition line and notice sit above the mobile table of contents. */
+.kl-page {
+  display: contents;
+}
+
+.kl-condition,
+.kl-notice {
+  order: -1;
+}
+
+.kl-paginator {
+  margin-left: var(--kl-margin);
+}
+
+.theme-doc-toc-mobile {
+  border: 1px solid var(--kl-rule-strong);
+  border-radius: 2px;
+  background-color: var(--kl-paper);
+}
+
+.theme-last-updated {
+  display: none;
+}
+
+.markdown h1 {
+  margin: 0 0 1.5rem;
+  font-family: var(--kl-font-label);
+  font-weight: 600;
+  line-height: 1.04;
+  letter-spacing: -0.005em;
+  text-wrap: balance;
+}
+
+.kl-page--entry .markdown > header h1 {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  column-gap: 0.4em;
+  align-items: baseline;
+}
+
+.kl-page--entry .markdown > header h1::before {
+  content: var(--kl-entry-number);
+  font-size: 1.6em;
+  line-height: 0.82;
+  font-variant-numeric: tabular-nums;
+  color: var(--kl-green);
+}
+
+.markdown h2 {
+  margin: 2.75rem 0 0.9rem;
+  text-wrap: balance;
+}
+
+.markdown h3 {
+  margin: 2rem 0 0.6rem;
+}
+
+.markdown p,
+.markdown ul,
+.markdown ol,
+.markdown blockquote,
+.markdown dl {
+  max-width: var(--kl-measure);
+}
+
+.markdown li + li {
+  margin-top: 0.35rem;
+}
+
+.markdown a {
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+.markdown a:hover {
+  text-decoration-thickness: 2px;
+}
+
+.hash-link {
+  color: var(--kl-gold-ink);
+}
+
+/* ── Numbered steps: tick boxes in the margin ───────────────────────────── */
+
+.kl-step {
+  position: relative;
+  margin-top: 2.75rem;
+}
+
+.markdown .kl-step > h2 {
+  margin-top: 0;
+}
+
+.kl-tick {
+  position: absolute;
+  top: 0.1rem;
+  left: calc(-1 * var(--kl-margin));
+  display: grid;
+  place-items: center;
+  width: 1.65rem;
+  height: 1.65rem;
+  padding: 0;
+  border: 1.5px solid var(--kl-ink-soft);
+  border-radius: 2px;
+  background-color: var(--kl-white);
+  color: var(--kl-green-deep);
+  cursor: pointer;
+  transition: border-color 150ms var(--kl-ease), background-color 150ms var(--kl-ease);
+}
+
+.kl-tick::after {
+  content: '';
+  position: absolute;
+  inset: -0.55rem;
+}
+
+.kl-tick:hover {
+  border-color: var(--kl-green);
+}
+
+.kl-tick svg {
+  width: 1.2rem;
+  height: 1.2rem;
+  stroke-dasharray: 24;
+  stroke-dashoffset: 24;
+  transition: stroke-dashoffset 240ms var(--kl-ease);
+}
+
+.kl-tick[aria-checked='true'] {
+  border-color: var(--kl-green);
+  background-color: var(--kl-green-wash);
+}
+
+.kl-tick[aria-checked='true'] svg {
+  stroke-dashoffset: 0;
+}
+
+/* ── Taped-in prints: screenshots, portraits, recordings ────────────────── */
+
+.kl-print {
+  position: relative;
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  margin: 2.25rem 0 2rem;
+  padding: 6px;
+  border: 1px solid var(--kl-rule);
+  background-color: var(--kl-white);
+  box-shadow: 0 1px 2px rgb(0 35 80 / 0.1), 0 3px 6px -3px rgb(0 35 80 / 0.16);
+}
+
+.kl-print > img,
+.kl-print > video {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin: 0;
+}
+
+.kl-print::before,
+.kl-print::after {
+  content: '';
+  position: absolute;
+  top: -13px;
+  width: clamp(54px, 17%, 96px);
+  aspect-ratio: 440 / 128;
+  background: url('/img/tape-1.png') center / contain no-repeat;
+  pointer-events: none;
+}
+
+.kl-print::before {
+  left: 14px;
+  transform: rotate(-3deg);
+}
+
+.kl-print::after {
+  right: 14px;
+  background-image: url('/img/tape-2.png');
+  transform: rotate(2.5deg);
+}
+
+.kl-print--tape-2::before {
+  left: 28px;
+  background-image: url('/img/tape-3.png');
+  transform: rotate(1.5deg);
+}
+
+.kl-print--tape-2::after {
+  right: 22px;
+  background-image: url('/img/tape-1.png');
+  transform: scaleX(-1) rotate(2deg);
+}
+
+.kl-print--tape-3::before {
+  left: 20px;
+  background-image: url('/img/tape-2.png');
+  transform: scaleX(-1) rotate(2.5deg);
+}
+
+.kl-print--tape-3::after {
+  right: 30px;
+  background-image: url('/img/tape-3.png');
+  transform: rotate(-2deg);
+}
+
+.kl-print--portrait {
+  width: min(15rem, 70%);
+  margin-top: 1.75rem;
+}
+
+blockquote .kl-print {
+  margin: 1.25rem 0 0.5rem;
+}
+
+/* ── Tables: ruled columns, figures as data ─────────────────────────────── */
+
+.markdown table {
+  border-collapse: collapse;
+  background-color: var(--kl-white);
+  font-variant-numeric: tabular-nums;
+}
+
+.markdown table th,
+.markdown table td {
+  padding: 0.55rem 0.75rem;
+  border: 1px solid var(--kl-rule);
+  vertical-align: top;
+}
+
+.markdown table thead th {
+  font-family: var(--kl-font-label);
+  font-weight: 600;
+  font-size: 1.02rem;
+  text-align: left;
+}
+
+.markdown table tr {
+  background-color: transparent;
+}
+
+/* ── Notes: boxed in dashes, not flagged with a coloured bar ────────────── */
+
+.markdown blockquote {
+  margin: 1.5rem 0;
+  padding: 0.75rem 1rem;
+  border: 1px dashed var(--kl-rule-strong);
+  background-color: var(--kl-paper);
+  color: var(--kl-ink);
+  font-size: 1rem;
+}
+
+.markdown blockquote > :last-child {
+  margin-bottom: 0;
+}
+
+/* ── Inline code: keys and field names as typed ─────────────────────────── */
+
+.markdown code {
+  border: 1px solid var(--kl-rule);
+  color: var(--kl-ink);
+  vertical-align: baseline;
+}
+
+/* ── Timestamp links into recordings ────────────────────────────────────── */
+
+.kl-timestamp {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+}
+
+.kl-timestamp::before {
+  content: '';
+  flex-shrink: 0;
+  width: 1.05em;
+  height: 1.05em;
+  background-color: currentColor;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='9.25' fill='none' stroke='black' stroke-width='1.9'/%3E%3Cpath d='M10.2 8.3v7.4l5.8-3.7z'/%3E%3C/svg%3E")
+    center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='9.25' fill='none' stroke='black' stroke-width='1.9'/%3E%3Cpath d='M10.2 8.3v7.4l5.8-3.7z'/%3E%3C/svg%3E")
+    center / contain no-repeat;
+}
+
+/* ── Page links: continued on the previous or next entry ────────────────── */
+
+.pagination-nav {
+  margin-top: 3rem;
+  padding-top: 1.1rem;
+  border-top: 1px solid var(--kl-rule-strong);
+  gap: 1rem;
+}
+
+.pagination-nav__link {
+  position: relative;
+  padding: 0.6rem 0.35rem;
+  border: 0;
+  border-radius: 2px;
+  transition: background-color 150ms var(--kl-ease);
+}
+
+.pagination-nav__link:hover {
+  border-color: transparent;
+  background-color: rgb(0 35 80 / 0.045);
+}
+
+.pagination-nav__label {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 1.12rem;
+  font-weight: 650;
+  line-height: 1.3;
+  color: var(--kl-green);
+}
+
+.pagination-nav__label > span {
+  min-width: 0;
+  overflow-wrap: normal;
+  word-break: normal;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+
+.pagination-nav__link:hover .pagination-nav__label {
+  color: var(--kl-green-deep);
+}
+
+.pagination-nav__link:hover .pagination-nav__label > span {
+  text-decoration-thickness: 2px;
+}
+
+.pagination-nav__label svg {
+  flex-shrink: 0;
+  width: 1.3em;
+  height: 1.3em;
+  margin-top: 0.02em;
+}
+
+.pagination-nav__label::before,
+.pagination-nav__label::after {
+  content: none !important;
+}
+
+.pagination-nav__link--next .pagination-nav__label {
+  justify-content: flex-end;
+}
+
+/* ── Table of contents and footer ───────────────────────────────────────── */
+
+.table-of-contents {
+  font-size: 0.92rem;
+}
+
+.table-of-contents__link {
+  color: var(--kl-ink-soft);
+}
+
+.table-of-contents__link--active {
+  color: var(--kl-green-deep);
+  font-weight: 650;
+}
+
+.footer {
+  border-top: 1px solid var(--kl-rule-strong);
+}
+
+.footer__title {
+  font-family: var(--kl-font-label);
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.footer__copyright {
+  font-size: 0.95rem;
+  color: var(--kl-ink-soft);
+}
+
+/* ── Home: the cover label and the index ────────────────────────────────── */
+
+.kl-page--home .markdown > header h1 {
+  display: inline-block;
+  margin: 0.5rem 0 1.6rem;
+  padding: 0.3rem 1.1rem 0.2rem;
+  border: 2px solid var(--kl-ink);
+  background-color: var(--kl-white);
+  outline: 1px solid var(--kl-ink);
+  outline-offset: 5px;
+  font-size: clamp(3.6rem, 2.4rem + 6vw, 6rem);
+  line-height: 0.95;
+}
+
+.markdown p.kl-lead {
+  max-width: 52ch;
+  font-size: 1.3rem;
+  line-height: 1.5;
+}
+
+/* ── Phones ─────────────────────────────────────────────────────────────── */
+
+@media (max-width: 600px) {
+  .kl-print[style] {
+    width: 100% !important;
+  }
+
+  .markdown p.kl-lead {
+    font-size: 1.18rem;
+  }
+
+  .pagination-nav {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .pagination-nav__link--prev {
+    justify-self: start;
+  }
+
+  .pagination-nav__link--next {
+    grid-column: 1;
+    justify-self: end;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .kl-tick,
+  .kl-tick svg,
+  .pagination-nav__link,
+  .navbar-sidebar {
+    transition: none;
+  }
+}

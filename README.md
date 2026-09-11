@@ -3,231 +3,156 @@
 User documentation for **Kladde**, the electronic lab notebook (ELN) used at Friedrich Schiller
 University Jena. Kladde is built on the open-source [cheminfo](https://cheminfo.github.io/)
 platform. These pages are written for Bachelor chemistry students in their first
-synthetic-chemistry lab practical and combine step-by-step guides, annotated screenshots and
-short screen recordings.
+synthetic-chemistry lab practical, and for researchers at the university, and combine step-by-step
+guides, annotated screenshots and short screen recordings.
 
 - Site: <https://kladde.uni-jena.de> (custom domain, currently not assigned; see
   [Known gaps](#known-gaps))
-- GitHub Pages project URL: <https://steinbeck-lab.github.io/demo_Digifellows/>
-- Repository: <https://github.com/Steinbeck-Lab/demo_Digifellows>
+- GitHub Pages project URL: <https://steinbeck-lab.github.io/kladde_Digifellows/>
+- Repository: <https://github.com/Steinbeck-Lab/kladde_Digifellows>
 
-The site is static: [MkDocs](https://www.mkdocs.org/) with the
-[Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) theme, no backend and no
-database.
+The site is a static [Docusaurus 3](https://docusaurus.io/) (React) site in English and German.
+Its visual design, the *Laborkladde* theme, is documented in [DESIGN.md](DESIGN.md).
 
 ## Contents
 
 | Navigation | Source | What it covers |
 |---|---|---|
-| Welcome | `docs/index.md` | Who the site is for, the suggested workflow, credits |
+| Welcome | `docs/index.mdx` | What Kladde is, then the numbered index of the workflow, and credits |
+| How to start › 01 New Entry | `docs/new-entry.md` | The main walkthrough in six steps: open an entry, title it, add reagents and the reaction, calculate amounts (*Ansatzberechnung*), look up GHS hazard data, set the status |
+| How to start › 02 Adding chemical equation | `docs/adding-chemical-equation.md` | Toolbar reference for the *OpenChemLib* structure editor |
+| How to start › 03 Snippets | `docs/snippets.md` | Shortcuts for the reaction description: predefined sentences, `_metainfo` keys, reagent references |
+| Analysis › 04 Sample Analysis | `docs/sample-analysis.md` | Not written yet |
+| Analysis › 05 IR, 06 NMR, 07 MS | `docs/ir.md`, `docs/nmr.md`, `docs/ms.md` | Not written yet |
+| 08 Report | `docs/report.md` | Not written yet |
 | About › What is ELN? | `docs/eln.md` | ELNs, the FAIR principles, what Kladde is |
 | About › Meet our team | `docs/christoph.md`, `docs/kevin.md`, `docs/kohulan.md`, `docs/soyee.md` | One page per team member: role, photo, bio |
 | About › License | `docs/license.md` | The licensing terms in plain language |
-| How to start › New Entry | `docs/new-entry.md` | The main walkthrough in six steps: open an entry, title it, add reagents and the reaction, calculate amounts (*Ansatzberechnung*), look up GHS hazard data, set the status |
-| How to start › Adding chemical equation | `docs/adding-chemical-equation.md` | Toolbar reference for the *OpenChemLib* structure editor |
-| How to start › Snippets | `docs/snippets.md` | Shortcuts for the reaction description: predefined sentences, `_metainfo` keys, reagent references |
-| Analysis › Sample Analysis | `docs/sample-analysis.md` | Not written yet (recording results such as melting point, GC and IR spectra) |
-| Analysis › IR, NMR, MS | `docs/ir.md`, `docs/nmr.md`, `docs/ms.md` | Not written yet |
-| Report | `docs/report.md` | Not written yet |
 
-The order of the navigation comes from `nav:` in `mkdocs.yml`. Pages that are not written yet,
-including the Soyee Chan bio, show the line `brewing in progress... ☕`.
-
-Three pages were renamed in September 2026. Their old URLs redirect to the new ones:
-`/how-to-start/` → `/new-entry/`, `/chemicaleditor/` → `/adding-chemical-equation/`,
-`/scheme/` → `/snippets/`.
+The numbered entries and their order come from `sidebars.js`. Pages that are not written yet,
+including the Soyee Chan bio, show the line `brewing in progress... ☕`. Old URLs from the MkDocs
+site redirect: `/how-to-start/` → `/new-entry/`, `/chemicaleditor/` →
+`/adding-chemical-equation/`, `/scheme/` → `/snippets/`.
 
 ## Local development
 
-Requires Python 3 (the site is currently built with Python 3.12). Install the tools into a
-virtual environment:
+Requires Node.js 20 or newer. Dependencies are pinned in `package.json` and `package-lock.json`:
 
 ```bash
-python3 -m venv .venv
-source .venv/bin/activate
-pip install mkdocs-material==9.7.7 mkdocs-redirects==1.2.2
+npm ci                 # install exactly the locked versions
+npm start              # English preview at http://localhost:3000, reloads on change
+npm run start:de       # German preview (the dev server serves one language at a time)
+npm run build          # production build of both languages into build/
+npm run serve          # serve build/ locally to check the result, including search
 ```
 
-- `mkdocs-redirects` is required by `mkdocs.yml`. Installing `mkdocs-material` alone does not
-  pull it in, and the build then stops with `The "redirects" plugin is not installed`.
-- Keep `mkdocs-redirects` at 1.2.2. Version 1.2.3 adds a dependency on `properdocs`, a fork of
-  MkDocs 1.x, and prints a banner asking you to switch tools.
-- Material 9.7.7 requires `mkdocs<2`, so the boxed MkDocs 2.0 warning that Material prints on
-  every build is informational.
-- There is no `.gitignore` yet, so make sure `.venv/` does not end up in a commit.
-
-Then:
-
-```bash
-mkdocs serve                                        # live preview at http://127.0.0.1:8000
-mkdocs build --strict --site-dir /tmp/kladde-site   # full build; fails on any warning
-```
-
-`--strict` catches links to pages that don't exist and nav entries without a file. It does
-**not** check the `src` and `poster` paths inside raw HTML, which is how every image and video
-on this site is embedded, so look at every page you touched in the preview. `--site-dir` keeps
-the build out of `site/`, which is still tracked in git (see [Deployment](#deployment)).
+- The build stops on broken links between pages. Links to anchors only warn.
+- The build does **not** check `src` and `poster` paths inside raw HTML, which is how screenshots
+  and videos are embedded, so look at every page you touched.
+- The search index is generated by `npm run build`; test search with `npm run serve`.
+- `build/`, `.docusaurus/` and `node_modules/` are ignored by git.
 
 ## Deployment
 
-Nothing deploys automatically; there is no CI. The live site is the `gh-pages` branch, and
-`mkdocs gh-deploy` rebuilds it from your working tree and replaces its contents:
+The live site is the `gh-pages` branch, served by GitHub Pages. Nothing deploys automatically;
+there is no CI. Deploy from a committed and pushed branch:
 
 ```bash
-git status                                              # clean, and main is pushed
-mkdocs gh-deploy --strict --site-dir /tmp/kladde-site
+GIT_USER=<your-github-username> npm run deploy    # or: USE_SSH=true npm run deploy
 ```
 
-- Deploy from a committed and pushed `main`. Each deploy is a commit on `gh-pages` named
-  `Deployed <sha> with MkDocs version: 1.6.1`, and that sha should exist on GitHub.
-- `docs/CNAME` holds the custom domain (`kladde.uni-jena.de`, one line, no trailing newline).
-  MkDocs copies it into the build; without it, a deploy removes the domain from `gh-pages`.
-- Afterwards, open the pages you changed on the live site. GitHub Pages usually publishes
-  within a minute.
-- Renaming or deleting a page changes a public URL. Add the old file name to `redirect_maps` in
-  `mkdocs.yml` so the old address keeps working.
-- `site/` on `main` is **not** the deployed site. It is a build from before the September 2026
-  restructure and is out of date; don't commit new builds into it.
+`docusaurus deploy` builds both languages and pushes `build/` to `gh-pages` of
+`Steinbeck-Lab/kladde_Digifellows` (set in `docusaurus.config.js`).
+
+- `static/CNAME` holds the custom domain (`kladde.uni-jena.de`, one line, no trailing newline) and
+  is copied into every build, so a deploy keeps the domain file on `gh-pages`.
+- Renaming or deleting a page changes a public URL. Add a redirect for the old address to the
+  `@docusaurus/plugin-client-redirects` entry in `docusaurus.config.js`.
+- After deploying, open the pages you changed on the live site.
 
 ## Repository layout
 
 ```
-mkdocs.yml               Site name and URL, theme, plugins, redirects, navigation
-docs/
-  *.md                   One file per page (see Contents)
+docusaurus.config.js     Site config: URL, languages, plugins, redirects, search, navbar, footer
+sidebars.js              Navigation order; entry('id') marks a numbered workflow entry
+docs/                    One file per page (see Contents)
+static/
   CNAME                  Custom domain for GitHub Pages
-  assets/
-    images/              Screenshots, toolbar icons, team photos
-    videos/              Screen recordings (*.mp4) and their poster images (thumbnail_*.png)
-  javascripts/
-    extra.js             seekVideo(id, seconds): jumps an embedded video to a timestamp
-site/                    Old build output, still tracked; not deployed
+  assets/images/         Screenshots, toolbar icons, team photos
+  assets/videos/         Screen recordings (*.mp4) and their poster images (thumbnail_*.png)
+  img/favicon.svg        Site icon
+i18n/de/                 German interface strings, and German page translations once they exist
+src/css/custom.css       The Laborkladde theme: tokens and styles
+src/theme/               Docusaurus theme overrides (see Theme and components)
+src/components/          EntryIndex, StepHeading, MdxVideo, Icons
+src/lib/                 Numbered entries from the sidebar; tick storage
+src/plugins/             rehypeTapedMedia, translationStatus
+src/clientModules/       Self-hosted fonts; timestamp links into videos
+DESIGN.md                The design system
+PRODUCT.md               Product facts behind the design
 LICENSE                  CC BY 4.0 for the content, MIT for the site code
 ```
 
-## Front end
-
-### Current state
-
-The theme is Material for MkDocs 9.7.7 without customization: `theme:` in `mkdocs.yml` sets only
-`name: material`.
-
-- **Look:** the default indigo palette (`--md-primary-fg-color: #4051b5`), light scheme only,
-  default logo and favicon. Roboto and Roboto Mono are loaded from Google Fonts.
-- **Layout:** no `theme.features` are enabled. The top-level sections (About, How to start,
-  Analysis, Report) are collapsible groups in the left sidebar, and the right sidebar is the
-  page's table of contents. There are no navigation tabs, no previous/next links in the footer,
-  no back-to-top button and no instant (single-page) navigation.
-- **Custom code:** no stylesheet (`extra_css` is empty) and no template overrides (`custom_dir`
-  is unset). The only script is `docs/javascripts/extra.js`.
-- **Markdown:** the MkDocs defaults (`toc`, `tables`, `fenced_code`) plus `footnotes` and
-  `md_in_html`, which renders Markdown inside HTML elements that carry a `markdown` attribute.
-  Admonitions, attribute lists (`attr_list`) and the `pymdownx.*` extensions are installed along
-  with Material but not enabled.
-- **Plugins:** `search` and `redirects`.
-
-Most visual decisions live in the pages themselves, as inline HTML:
-
-- 53 inline `style=` attributes size the toolbar icons: 37 in `adding-chemical-equation.md`
-  (mostly its 22-row button table), 15 in `new-entry.md` and 1 in `snippets.md`.
-- Two more inline styles align the links to the next and previous page at the bottom of
-  `new-entry.md` and `snippets.md`.
-- Screenshots, team photos and videos are sized with `width="…%"`.
-- Three classes exist with no CSS behind them yet, all in `new-entry.md`: `screenshot` on
-  screenshots, and `icon` and `hazard` on inline SVG icons.
-- Tips and notes are plain `>` blockquotes.
-- A few colors are hard-coded: a `<font color="red">` in `snippets.md`, and SVG strokes and
-  fills in `new-entry.md`.
-
-### Where customization goes
-
-| To change | Use |
-|---|---|
-| Colors, light/dark mode | `theme.palette` in `mkdocs.yml`, or override the `--md-*` CSS variables |
-| Fonts | `theme.font`; Material's `privacy` plugin can download Google Fonts and serve them from the site itself |
-| Logo, favicon | `theme.logo`, `theme.favicon`, with the files in `docs/assets/images/` |
-| Navigation and header behavior | `theme.features`, for example `navigation.tabs`, `navigation.footer`, `navigation.top`, `search.suggest` |
-| Styles | a stylesheet such as `docs/stylesheets/extra.css`, listed under `extra_css` |
-| Scripts | `extra_javascript` (currently `javascripts/extra.js`) |
-| Page templates | `theme.custom_dir: overrides`, then an `overrides/main.html` that extends blocks of Material's `base.html` (`extrahead`, `announce`, `header`, `hero`, `tabs`, `content`, `footer`, …) or copies of files from `material/templates/partials/` |
-| Markdown features | `markdown_extensions`, for example `admonition`, `attr_list`, `pymdownx.tabbed` |
-
-### Things to keep in mind
-
-- Every image and video is embedded as raw HTML, and MkDocs neither rewrites nor checks those
-  paths. Pages are served as directories (`docs/new-entry.md` → `/new-entry/`), so asset paths
-  in a page start with `../assets/`. `docs/index.md` is served at the root and needs `assets/…`
-  instead: `../assets/…` happens to work at a domain root but breaks under the project URL
-  (`/demo_Digifellows/`).
-- `seekVideo` is a global function called from inline `onclick` handlers, so it keeps working if
-  `navigation.instant` is enabled. Scripts that must run on every page load would then have to
-  subscribe to Material's `document$`, because instant navigation swaps pages without reloading
-  scripts.
-- The media is heavy. The largest videos are 33 MB (`snippets-preset.mp4`), 18 MB, 14 MB, 13 MB
-  and 11 MB, and three short clips autoplay. `kevin-jablonka.jpg` is a 3024×3024 photo displayed
-  at 20% width.
-- Material's MkDocs 2.0 warning says theme overrides will not carry over to MkDocs 2.0. The
-  versions pinned above keep the site on MkDocs 1.6.
-
 ## Writing content
+
+Pages are Markdown. `.md` files are read as plain CommonMark, so the raw HTML the guides use
+(inline icons, `<video>`, inline SVG) renders as written. Use `.mdx` only when a page needs a
+React component, as the home page does for its index.
 
 **A new page**
 
-1. Create `docs/<kebab-case-name>.md` starting with a single `#` title.
-2. Add it to `nav:` in `mkdocs.yml`.
-3. Link to it from related pages with a relative Markdown link, such as `[Snippets](snippets.md)`.
-   For a heading on the same page, link its anchor:
-   `[Method 1](#method-1-recommended-first-data-entry-then-chemical-equation)`.
-4. Run `mkdocs build --strict --site-dir /tmp/kladde-site`.
+1. Create `docs/<kebab-case-name>.md` with a single `#` title.
+2. Add it to `sidebars.js`. Use `entry('<name>')` if it is a numbered step of the workflow; the
+   numbers in the sidebar, on the home index and on the page follow that order.
+3. Give it a `description` in the front matter; the home index shows it under the entry.
+4. Run `npm run build` to check the links.
 
-**Renaming or removing a page:** add `old-name.md: new-name.md` under `redirect_maps` in
-`mkdocs.yml`, then fix the links that the strict build reports.
+**Front matter used on this site**
 
-**A screenshot or icon:** save it in `docs/assets/images/` as `img_<feature>_<descriptor>.png`
-and always give it `alt` text:
+```yaml
+---
+sidebar_label: New Entry            # label in the sidebar
+pagination_label: New Entry         # label when another page links here at its end
+description: Start your entry and prepare for the synthesis.
+pagination_next: snippets           # target of the link at the end of the page (a doc id)
+pagination_next_label: Use snippets to describe your scheme   # its label on this page only
+pagination_prev: new-entry          # and the link back
+---
+```
+
+`pagination_next_label` and `pagination_prev_label` are specific to this site
+(`src/theme/DocItem/Paginator`).
+
+**Screenshots and recordings:** put the file in `static/assets/images/` or
+`static/assets/videos/` and reference it relative to the page, as the guides do:
 
 ```html
 <img class="screenshot" width="70%" alt="Customized entry title" src="../assets/images/img_title1.png"/>
-```
 
-Toolbar icons inside running text use `style="width:1.5em; vertical-align:top;"` instead of a
-percentage width.
-
-**A tutorial video:** save it as `docs/assets/videos/<page>-<step>.mp4` with a poster image of
-the same size, `thumbnail_<page>-<step>.png`, and embed it with controls:
-
-```html
 <video controls muted width="100%" poster="../assets/videos/thumbnail_how-to-start-3-4.png">
   <source src="../assets/videos/how-to-start-3-4.mp4" type="video/mp4">
 </video>
 ```
 
-Short silent clips use `autoplay muted loop playsinline` instead of `controls`. Older files keep
-the names they had before the rename: `how-to-start-*` for New Entry, `img_chemicaleditor_*`
-for Adding chemical equation, `img_scheme_*` for Snippets.
+Every `<img>` without an inline `style` and every `<video>` is framed as a taped-in print
+automatically, and a percentage `width` becomes the width of that frame. Toolbar icons in running
+text keep `style="width:1.5em; vertical-align:top;"` and stay inline. Team photos use
+`class="kl-portrait"` and the person's name as `alt`. Short silent clips use
+`autoplay muted loop playsinline` instead of `controls`.
 
-**A link to a moment in a video:** give the `<video>` an `id` and call `seekVideo` with that id
-and the time in seconds:
+**Numbered steps:** a heading written as `## 1. Open your ELN Entry` gets a tick box in the page
+margin automatically. Ticks are stored in the reader's browser only.
 
-```html
-<video id="snippets-preset" controls muted width="100%" poster="…">…</video>
-<a href="javascript:void(0)" onclick="seekVideo('snippets-preset', 172)">▶ 02:52</a>
-```
-
-**Links to the next and previous page:** write them as Markdown links inside a `<p>` with
-`markdown="span"`, so the strict build still checks them and turns them into page URLs (links
-written as plain `<a href>` are never checked). Previous and next on one line:
+**A link to a moment in a video:** give the `<video>` an `id`; the link names the video and the
+time in seconds, and still jumps to the video without JavaScript:
 
 ```html
-<p style="display: flex; justify-content: space-between" markdown="span">[← New Entry](new-entry.md) [Sample Analysis →](sample-analysis.md)</p>
+<a href="#snippets-preset" data-video="snippets-preset" data-time="172" class="kl-timestamp">Jump to 02:52</a>
 ```
-
-A single link to the next page uses `style="text-align: right"` instead.
 
 **House style**
 
-- One `#` title per page, `##` for numbered steps, `###` for alternatives. Pages under How to
-  start use breadcrumb titles such as `# How to start > New Entry`.
+- One `#` title per page, `##` for numbered steps, `###` for alternatives.
 - Imperative voice: "Click", "Enter", "Add".
 - UI labels in single quotes ('Prefs', 'Save Data'); column names, fields and typed keys in
   backticks (`mmoles`, `r1`, `_metainfo`).
@@ -235,32 +160,78 @@ A single link to the next page uses `style="text-align: right"` instead.
 - German lab terms (*Ansatzberechnung*, *Versuchsanleitung*, *H- & P-Sätze*) are intentional.
 - A page that isn't written yet contains only `brewing in progress... ☕`.
 
+## Translations
+
+- **Interface strings** (navigation, footer, notices, labels) live in `i18n/de/`. After adding or
+  changing a `<Translate>` string in `src/`, run `npm run write-translations -- --locale de` and
+  translate the new entries in `i18n/de/code.json`. The German interface strings were drafted
+  during the redesign and should be checked by a German speaker on the team.
+- **Pages:** copy `docs/<page>.md` to `i18n/de/docusaurus-plugin-content-docs/current/<page>.md`
+  and translate it, keeping the front matter keys. Until that file exists, the German page shows
+  the English text with a notice, and the condition line at the top of every page says whether
+  the German text exists yet (`src/plugins/translationStatus.js`).
+- Sidebar category labels are translated in
+  `i18n/de/docusaurus-plugin-content-docs/current.json`.
+
+## Theme and components
+
+The *Laborkladde* theme treats the documentation as the squared-paper lab notebook Kladde replaces.
+[DESIGN.md](DESIGN.md) records the system; the tokens are the `--kl-*` custom properties at the top
+of `src/css/custom.css`.
+
+| Token | Value | Source and use |
+|---|---|---|
+| `--kl-ink` | `#002350` | FSU blue; text (15.5:1 on white) and the navbar |
+| `--kl-green` | `#4E7F0A` | Faculty green #74A740 darkened for text (4.8:1); links, entry numbers, ticks |
+| `--kl-gold` | `#887440` | FSU gold (4.55:1); margin rule, sidebar numbers, section labels |
+| `--kl-ink-soft` | `#3A5F91` | Secondary text (6.5:1) |
+| `--kl-paper` | `#FCFDFE` | Page ground with a faint 5 mm grid |
+
+Type is self-hosted from npm (no Google Fonts): Atkinson Hyperlegible Next for text and Barlow
+Semi Condensed for titles, labels and numbers.
+
+Customized parts of Docusaurus:
+
+- `src/theme/MDXComponents.js` extends the Markdown components (step headings, video anchors), the
+  extension point the Docusaurus docs describe.
+- `src/theme/DocItem/Content`, `src/theme/DocItem/Paginator` and `src/theme/PaginatorNavLink` are
+  not on Docusaurus's list of components that are safe to customize, and the language link in
+  `DocItem/Content` uses `useAlternatePageUtils` from `@docusaurus/theme-common/internal`.
+  **Check them after every Docusaurus upgrade** against the new versions in
+  `node_modules/@docusaurus/theme-classic/lib/theme/`.
+- `src/plugins/rehypeTapedMedia.js` adds the print frames at build time and picks one of three tape
+  arrangements per print; the tape strips are rendered images, `static/img/tape-1.png` to
+  `tape-3.png`, with their origin embedded;
+  `src/plugins/translationStatus.js` records which pages are translated.
+- The search is `@easyops-cn/docusaurus-search-local`, pinned at 0.55.3. Its optional AI widget
+  dependency is not installed.
+
 ## Known gaps
 
 - **Custom domain:** since the repository moved to Steinbeck-Lab, `kladde.uni-jena.de` is not
   assigned in the repository's GitHub Pages settings and shows "Site not found". Its DNS record
-  still points at `soyeechan230126.github.io`. The site is live at the
-  [project URL](https://steinbeck-lab.github.io/demo_Digifellows/). Clones made before the move
+  still points at `soyeechan230126.github.io`. The site is reachable at the
+  [project URL](https://steinbeck-lab.github.io/kladde_Digifellows/) for now, but that URL only works
+  for the old MkDocs build: this Docusaurus build uses `baseUrl: '/'` and loads its styles and
+  scripts from the domain root, so restore the custom domain before deploying it. Clones made before the move
   can update their remote with
-  `git remote set-url origin https://github.com/Steinbeck-Lab/demo_Digifellows.git`.
+  `git remote set-url origin https://github.com/Steinbeck-Lab/kladde_Digifellows.git`.
+- **German text:** no page is translated yet, and the German interface strings need review.
 - **Unwritten pages:** Sample Analysis, IR, NMR, MS, Report and the Soyee Chan bio.
-- **No dependency file, `.gitignore` or CI:** the tool versions are recorded only in this README,
-  and `site/` is still tracked although it is out of date.
-- **Media:** see the sizes under [Things to keep in mind](#things-to-keep-in-mind). The three
-  team photos have no `alt` text, and the three autoplay clips have no poster.
-- **Unused files:** `docs/assets/images/img_chemicaleditor_topright.png`,
-  `docs/assets/images/img_hexagon.png`, `docs/assets/videos/tipsandtricks_1.mp4`.
-- **Copy and markup:** typos on several pages (for example "gradtitude", "Ansatztberechnung",
+- **Media:** the largest videos are 33 MB (`snippets-preset.mp4`), 18 MB, 14 MB, 13 MB and 11 MB;
+  every file under `static/` is copied into both language builds. `kevin-jablonka.jpg` is a
+  3024×3024 photo shown at portrait size. The three autoplay clips have no poster.
+- **Unused files:** `static/assets/images/img_chemicaleditor_topright.png`,
+  `static/assets/images/img_hexagon.png`, `static/assets/videos/tipsandtricks_1.mp4`.
+- **Copy and markup:** typos on several pages (for example "ammendment", "Ansatztberechnung",
   "Assistent"); `playinline` instead of `playsinline` and a `<font>` tag in `snippets.md`; an
-  invalid `background-color: b8b8b8` in `new-entry.md`; `eln.md` has two `#` titles;
-  two decorative `[Jump to ](#)` links.
+  invalid `background-color: b8b8b8` in `new-entry.md`; `eln.md` has two `#` titles.
 - **License attribution:** `LICENSE` still names the work "ELN Documentation".
 
 ## License
 
 The documentation content (text, screenshots, videos) is licensed under
-[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), the site code (`mkdocs.yml`,
-`docs/javascripts/extra.js`) under [MIT](https://opensource.org/licenses/MIT). Screenshots and
-videos show third-party software (the ELN and *OpenChemLib*) whose interfaces and trademarks
-remain with their owners. The full terms are in [`LICENSE`](LICENSE) and on the site's
-[License page](docs/license.md).
+[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), the site code under
+[MIT](https://opensource.org/licenses/MIT). Screenshots and videos show third-party software (the
+ELN and *OpenChemLib*) whose interfaces and trademarks remain with their owners. The full terms are
+in [`LICENSE`](LICENSE) and on the site's [License page](docs/license.md).

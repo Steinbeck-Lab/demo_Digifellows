@@ -1,4 +1,11 @@
-# How to start > New Entry
+---
+sidebar_label: New Entry
+pagination_label: New Entry
+description: Start your entry and prepare for the synthesis.
+pagination_next: snippets
+pagination_next_label: Use snippets to describe your scheme
+---
+# New Entry
 
 ## 1.  Open your ELN Entry
 
@@ -81,5 +88,3 @@ On the page of the ELN entry enter a title of your choice for the reaction and c
 Change the status of your ELN entry by clicking one of the buttons or customize your own label. Click <img alt="Save Data" style="height: 1.5em; width: auto; vertical-align: top" src="../assets/images/img_savedata.png"> afterwards. The history of changes cannot be modified.
 
 > Now your ELN is ready to use!
-
-<p style="text-align: right" markdown="span">[Use snippets to describe your scheme →](snippets.md)</p>

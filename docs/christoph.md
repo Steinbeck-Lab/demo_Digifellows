@@ -1,7 +1,7 @@
 # Prof. Dr. Christoph Steinbeck
 ## Professor for Analytical Chemistry, Cheminformatics and Chemometrics (Institute for Inorganic and Analytical Chemistry)
 
-<img src="../assets/images/christoph-steinbeck.jpg" width=20%/>
+<img src="../assets/images/christoph-steinbeck.jpg" alt="Prof. Dr. Christoph Steinbeck" class="kl-portrait"/>
 
 Christoph Steinbeck studied chemistry at the University of Bonn, where he received his diploma and doctoral degree at the Institute of Organic Chemistry in the group of Prof. Eberhard Breitmaier. Focus of his Ph. D. thesis was the program LUCY for computer assisted structure elucidation. In 1996, he joined the group of Prof. Clemens Richert at Tufts University in Boston, MA, USA, where he worked in the area of biomolecular NMR on the 3D structure elucidation of peptide-nucleic acid conjugates. In 1997 Christoph Steinbeck became head of the Structural Chemo- and Bioinformatics Workgroup at the newly founded Max-Planck-Institute of Chemical Ecology in Jena, Germany. In Autumn 2002 he moved to Cologne University Bioinformatics Center (CUBIC) as head of the Research Group for Molecular Informatics. In December 2003 Christoph Steinbeck received his Habilitation in Organic Chemistry from Friedrich-Schiller-University in Jena, Germany. From 2008 to 2016, Christoph was head of cheminformatics and metabolism at the European Bioinformatics Institute (EBI) in Hinxton, Cambridge, UK. During this time, his group developed open chemistry databases for the biosciences, such as ChEBI, the dictionary and ontology of Chemical Entities of Biological Interest, and the MetaboLights database, a repository and reference database for Metabolomics.
 
